@@ -1,4 +1,7 @@
 import logo from '@assets/img/vanhack-logo.svg'
+import canadaFlag from '@assets/img/canada.svg'
+import signalIcon from '@assets/img/signal.svg'
+import priceSimbol from '@assets/img/money-simbol.svg'
 
 const JobsPage = () => {
   return (
@@ -42,14 +45,51 @@ const JobsPage = () => {
                     <input className='text-sm text-gray-500' type="text" placeholder='Job title or tech skill'/>
                 </div>
             </form>
-            <div className="jobs mt-12 text-gray-700">
-                <h2 className='text-2xl font-bold'>Newst Jobs</h2>
+            <section className="jobs mt-12 text-gray-700">
+                <h2 className='text-2xl font-bold mb-5'>Newst Jobs</h2>
                 <div className="jobs__list">
-                    <div className="job border py-6 px-7 rounded-md">
-                        
-                    </div>
+                    {".".repeat(3).split('').map(() => (
+                        <article className="job border mb-6 py-8 px-8 rounded-lg cursor-pointer transition ease-in-out duration-300 hover:shadow-lg">
+                            <div className="job__time-positions flex items-center">
+                                <span className="time-to-publication bg-blue-500 rounded-xl text-white text-xs px-3 py-1">New - 6 hours ago</span>
+                                <p className="postions text-xs ml-3">1 position</p>
+                            </div>
+                            <h3 className="job__title text-xl font-bold text-blue-500 mt-5">Intermediate Developer (FULLY REMOTE)</h3>
+                            <div className="job__information flex mt-7">
+                                <div className="job__information-country flex items-center mr-4">
+                                    <img src={canadaFlag} alt="canada" className='w-6'  />
+                                    <p className='ml-2 text-sm text-gray-600'>Montreal - Canada</p>
+                                </div>
+                                <div className="job__information-modality flex items-center mr-4">
+                                    <img src={signalIcon} alt="remote"  />
+                                    <p className='ml-2 text-sm text-gray-600'>Fully remote</p>
+                                </div>
+                                <div className="job__information-salary flex items-center mr-4">
+                                    <img src={priceSimbol} alt="price"  />
+                                    <p className='ml-2 text-sm text-gray-600'>$80,000 up to $100,000 CAD/Annual</p>
+                                </div>
+                            </div>
+                            <div className="job__description mt-5">
+                                <p className='text-sm text-gray-600'>
+                                Tech company in Canada is looking to hire Intermediate PHP/React developers! IMPORTANT: Job is fully remote 
+                                The Intermediate Developer is responsible for:
+                                </p>
+                            </div>
+                            <ul className="job__skills mt-8">
+                                <li className="skill inline-flex rounded-xl border px-2 py-1 mr-3">
+                                    <p className='text-gray-400 text-sm font-bold mr-3'>Php</p>
+                                    <span className='text-gray-400 text-sm'> 3years</span>
+                                </li>
+                                <li className="skill inline-flex rounded-xl border px-2 py-1 mr-3">
+                                    <p className='text-gray-400 text-sm font-bold mr-3'>React</p>
+                                    <span className='text-gray-400 text-sm'> 3years</span>
+                                </li>
+                            </ul>
+                        </article>
+                    ))}
+                    
                 </div>
-            </div>
+            </section>
         </div>
         
     </>
