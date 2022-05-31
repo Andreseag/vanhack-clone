@@ -2,6 +2,7 @@ import logo from '@assets/img/vanhack-logo.svg'
 import canadaFlag from '@assets/img/canada.svg'
 import signalIcon from '@assets/img/signal.svg'
 import priceSimbol from '@assets/img/money-simbol.svg'
+import { SearchIcon } from '@heroicons/react/solid'
 
 const JobsPage = () => {
   return (
@@ -34,21 +35,26 @@ const JobsPage = () => {
             <form className="filters flex justify-between bg-white shadow-sm border rounded-lg py-6 px-7 mt-10">
                 <div className="filers__group flex flex-col">
                     <label className='text-sm font-bold text-gray-500 mb-2' htmlFor="">What</label>
-                    <input className='text-sm text-gray-500' type="text" placeholder='Job title or tech skill'/>
+                    <input className='text-sm text-gray-500 focus:outline-0' type="text" placeholder='Job title or tech skill'/>
                 </div>
-                <div className="filers__group flex flex-col">
+                <div className="filers__group flex flex-col border-l px-2">
                     <label className='text-sm font-bold text-gray-500 mb-2' htmlFor="">Where</label>
-                    <input className='text-sm text-gray-500' type="text" placeholder='Job title or tech skill'/>
+                    <input className='text-sm text-gray-500 focus:outline-0' type="text" placeholder='Country or city name'/>
                 </div>
-                <div className="filers__group flex flex-col">
+                <div className="filers__group flex flex-col border-l px-2">
                     <label className='text-sm font-bold text-gray-500 mb-2' htmlFor="">Remote or Relocate</label>
-                    <input className='text-sm text-gray-500' type="text" placeholder='Job title or tech skill'/>
+                    <input className='text-sm text-gray-500 focus:outline-0' type="text" placeholder='Choose an option'/>
+                </div>
+                <div className="filers__group flex items-center">
+                    <button>
+                        <SearchIcon className="h-7 w-7 text-gray-600" />
+                    </button>
                 </div>
             </form>
             <section className="jobs mt-12 text-gray-700">
                 <h2 className='text-2xl font-bold mb-5'>Newst Jobs</h2>
                 <div className="jobs__list">
-                    {".".repeat(3).split('').map(() => (
+                    {".".repeat(6).split('').map(() => (
                         <article className="job border mb-6 py-8 px-8 rounded-lg cursor-pointer transition ease-in-out duration-300 hover:shadow-lg">
                             <div className="job__time-positions flex items-center">
                                 <span className="time-to-publication bg-blue-500 rounded-xl text-white text-xs px-3 py-1">New - 6 hours ago</span>
