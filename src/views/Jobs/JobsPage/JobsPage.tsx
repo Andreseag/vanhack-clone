@@ -2,12 +2,12 @@ import logo from '@assets/img/vanhack-logo.svg'
 import canadaFlag from '@assets/img/canada.svg'
 import signalIcon from '@assets/img/signal.svg'
 import priceSimbol from '@assets/img/money-simbol.svg'
-import { SearchIcon } from '@heroicons/react/solid'
+import { SearchIcon, ArrowSmRightIcon } from '@heroicons/react/solid'
 
 const JobsPage = () => {
   return (
     <>
-        <header className='top-bar py-3 w-full flex justify-center items-center border-b'>
+        <header className='top-bar h-16 w-full flex justify-center items-center border-b'>
             <div className="top-bar__container w-full lg:w-9/12 mx-8 lg:mx-0 flex items-center justify-between ">
                 <div className="top-bar__navegation flex items-center">
                     <div className="top-bar__logo mr-3">
@@ -32,7 +32,7 @@ const JobsPage = () => {
         </header>
         <div className="container m-auto w-full lg:w-9/12 mt-10">
             <h1 className="text-gray-700 text-3xl font-bold">Find your dream job abroad or remote</h1>
-            <form className="filters flex justify-between bg-white shadow-sm border rounded-lg py-6 px-7 mt-10">
+            <form className="filters flex justify-between bg-white shadow-lg border rounded-lg py-6 px-7 mt-10">
                 <div className="filers__group flex flex-col">
                     <label className='text-sm font-bold text-gray-500 mb-2' htmlFor="">What</label>
                     <input className='text-sm text-gray-500 focus:outline-0' type="text" placeholder='Job title or tech skill'/>
@@ -51,51 +51,79 @@ const JobsPage = () => {
                     </button>
                 </div>
             </form>
-            <section className="jobs mt-12 text-gray-700">
-                <h2 className='text-2xl font-bold mb-5'>Newst Jobs</h2>
-                <div className="jobs__list">
-                    {".".repeat(6).split('').map(() => (
-                        <article className="job border mb-6 py-8 px-8 rounded-lg cursor-pointer transition ease-in-out duration-300 hover:shadow-lg">
-                            <div className="job__time-positions flex items-center">
-                                <span className="time-to-publication bg-blue-500 rounded-xl text-white text-xs px-3 py-1">New - 6 hours ago</span>
-                                <p className="postions text-xs ml-3">1 position</p>
-                            </div>
-                            <h3 className="job__title text-xl font-bold text-blue-500 mt-5">Intermediate Developer (FULLY REMOTE)</h3>
-                            <div className="job__information flex mt-7">
-                                <div className="job__information-country flex items-center mr-4">
-                                    <img src={canadaFlag} alt="canada" className='w-6'  />
-                                    <p className='ml-2 text-sm text-gray-600'>Montreal - Canada</p>
+            <div className="container mt-12 flex">
+                <section className="jobs text-gray-700 mr-6">
+                    <h2 className='text-2xl font-bold mb-5'>Newst Jobs</h2>
+                    <div className="jobs__list">
+                        {".".repeat(6).split('').map(() => (
+                            <article className="job border mb-6 py-8 px-8 rounded-lg cursor-pointer transition ease-in-out duration-300 hover:shadow-lg">
+                                <div className="job__time-positions flex items-center">
+                                    <span className="time-to-publication bg-blue-500 rounded-xl text-white text-xs px-3 py-1">New - 6 hours ago</span>
+                                    <p className="postions text-xs ml-3">1 position</p>
                                 </div>
-                                <div className="job__information-modality flex items-center mr-4">
-                                    <img src={signalIcon} alt="remote"  />
-                                    <p className='ml-2 text-sm text-gray-600'>Fully remote</p>
+                                <h3 className="job__title text-xl font-bold text-blue-500 mt-5">Intermediate Developer (FULLY REMOTE)</h3>
+                                <div className="job__information flex mt-7">
+                                    <div className="job__information-country flex items-center mr-4">
+                                        <img src={canadaFlag} alt="canada" className='w-6'  />
+                                        <p className='ml-2 text-sm text-gray-600'>Montreal - Canada</p>
+                                    </div>
+                                    <div className="job__information-modality flex items-center mr-4">
+                                        <img src={signalIcon} alt="remote"  />
+                                        <p className='ml-2 text-sm text-gray-600'>Fully remote</p>
+                                    </div>
+                                    <div className="job__information-salary flex items-center mr-4">
+                                        <img src={priceSimbol} alt="price"  />
+                                        <p className='ml-2 text-sm text-gray-600'>$80,000 up to $100,000 CAD/Annual</p>
+                                    </div>
                                 </div>
-                                <div className="job__information-salary flex items-center mr-4">
-                                    <img src={priceSimbol} alt="price"  />
-                                    <p className='ml-2 text-sm text-gray-600'>$80,000 up to $100,000 CAD/Annual</p>
+                                <div className="job__description mt-5">
+                                    <p className='text-sm text-gray-600'>
+                                    Tech company in Canada is looking to hire Intermediate PHP/React developers! IMPORTANT: Job is fully remote 
+                                    The Intermediate Developer is responsible for:
+                                    </p>
                                 </div>
-                            </div>
-                            <div className="job__description mt-5">
-                                <p className='text-sm text-gray-600'>
-                                Tech company in Canada is looking to hire Intermediate PHP/React developers! IMPORTANT: Job is fully remote 
-                                The Intermediate Developer is responsible for:
-                                </p>
-                            </div>
-                            <ul className="job__skills mt-8">
-                                <li className="skill inline-flex rounded-xl border px-2 py-1 mr-3">
-                                    <p className='text-gray-400 text-sm font-bold mr-3'>Php</p>
-                                    <span className='text-gray-400 text-sm'> 3years</span>
-                                </li>
-                                <li className="skill inline-flex rounded-xl border px-2 py-1 mr-3">
-                                    <p className='text-gray-400 text-sm font-bold mr-3'>React</p>
-                                    <span className='text-gray-400 text-sm'> 3years</span>
-                                </li>
-                            </ul>
-                        </article>
-                    ))}
-                    
-                </div>
-            </section>
+                                <ul className="job__skills mt-8">
+                                    <li className="skill inline-flex rounded-xl border px-2 py-1 mr-3">
+                                        <p className='text-gray-400 text-sm font-bold mr-3'>Php</p>
+                                        <span className='text-gray-400 text-sm'> 3years</span>
+                                    </li>
+                                    <li className="skill inline-flex rounded-xl border px-2 py-1 mr-3">
+                                        <p className='text-gray-400 text-sm font-bold mr-3'>React</p>
+                                        <span className='text-gray-400 text-sm'> 3years</span>
+                                    </li>
+                                </ul>
+                            </article>
+                        ))}
+                        
+                    </div>
+                </section>
+                <aside className="news w-96"> 
+                    <div className="new border rounded-lg p-6">
+                        <figure className="new__photo">
+                            <img
+                                className='rounded-xl'
+                                src="https://vanhackblobstorageprod.blob.core.windows.net/img/events/cover/903e2e4f-1f84-4b91-8807-f5ef5702aaa6.jpg"
+                                alt="post"
+                            />
+                        </figure>
+                        <h3 className='new__title text-lg font-bold text-gray-700 my-4'>
+                            Winning Salary & Offer Negotiation Strategies ~ Everything You Need to Know
+                        </h3>
+                        <p className='new__description text-sm text-gray-500'>
+                        In this masterclass, you will learn how to negotiate a job offer appropriately, reasonable timelines for accepting offers and what types of relocation packages may be offered.
+                        Topics that will be covered:
+
+                        Salary and offer negotiation strategies
+                        Relocation packages
+                        </p>
+                        <a className='new__action mt-3 mb-5  font-bold text-sm text-blue-500 flex items-center ' href="">
+                            See details
+                            <ArrowSmRightIcon className='w-5 ml-1' />
+                        </a>
+                    </div>
+                </aside>
+            </div>
+            
         </div>
         
     </>
